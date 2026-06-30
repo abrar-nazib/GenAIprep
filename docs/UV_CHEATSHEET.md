@@ -3,8 +3,22 @@
 ## Projects
 
 - Create a project: `uv init`
+- Create with a Python requirement: `uv init --python <version>`
 - Create an app/library: `uv init --app` / `uv init --lib`
 - Create in a new directory: `uv init <name>`
+
+Recommended setup order:
+
+```bash
+mkdir <project>
+cd <project>
+uv python pin <version>
+uv init
+uv add <packages>
+```
+
+`uv python pin` can run before `uv init`; it creates `.python-version`, which
+`uv init` uses for the project's `requires-python` value.
 
 ## Dependencies
 
@@ -20,10 +34,13 @@
 ## Lock and Sync
 
 - Update the lockfile: `uv lock`
-- Sync the environment: `uv sync`
+- Create/update `.venv` from `uv.lock`: `uv sync`
 - Verify the lockfile is current: `uv lock --check`
 - Sync without changing the lockfile: `uv sync --locked`
 - Export requirements: `uv export --format requirements.txt -o requirements.txt`
+
+`uv sync` requires an initialized project and removes undeclared packages by
+default. `uv add` updates the lockfile and syncs automatically.
 
 ## Run
 
