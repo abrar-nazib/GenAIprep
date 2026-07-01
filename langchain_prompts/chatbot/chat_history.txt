@@ -1,0 +1,2 @@
+human: Find transaction #1234 and refund it to me
+AI: I am raising a ticket #12345 and we're processing your request. You will get a refund if our policies align with your scenerio.
