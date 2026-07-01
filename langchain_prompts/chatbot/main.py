@@ -1,4 +1,5 @@
 from langchain_openrouter import ChatOpenRouter
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from dotenv import load_dotenv
 import os
 
@@ -14,19 +15,22 @@ model = ChatOpenRouter(
     temperature=0,
     max_tokens=1024,
 )
-chat_history = []
+
+chat_history = [
+    SystemMessage(
+        content="You are a helpful AI assistant. You answer in to-the-point and short but understandable manner instead of bluffing. You focus on conceptual understanding and provide examples where needed."
+    )
+]
 
 
 while True:
-    user_input = input('You: ')
-    chat_history.append(user_input)
-    if user_input == 'exit':
+    user_input = input("You: ")
+    chat_history.append(HumanMessage(content=user_input))
+    if user_input == "exit":
         print("Thank you!")
         break
     result = model.invoke(chat_history)
-    chat_history.append(result.content)
+    chat_history.append(AIMessage(content =result.content))
     print("AI: ", result.content)
-    
+
 print(chat_history)
-    
-    
