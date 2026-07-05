@@ -28,4 +28,4 @@ parser = StrOutputParser()
 
 chain = RunnableSequence(joke_generator_prompt, model, parser, joke_explainer_prompt, model, parser)
 
-print(chain.invoke({"topic":"AI"})) 
+print(chain.invoke({"topic": "AI"}))
