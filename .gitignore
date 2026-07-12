@@ -1,3 +1,5 @@
 .venv/
 .env
 __pycache__/
+out.json
+out.md
