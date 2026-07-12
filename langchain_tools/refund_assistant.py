@@ -6,6 +6,10 @@ from langgraph.types import Command
 from langchain_openrouter import ChatOpenRouter
 from dotenv import load_dotenv
 from pathlib import Path
+from langchain_core.globals import set_debug
+
+set_debug(True)
+
 
 cwd = Path(__file__).parent
 print(cwd)
