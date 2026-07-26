@@ -1,3 +1,5 @@
+"""Prompt Chaining Example"""
+
 from langchain_openrouter import ChatOpenRouter
 from langgraph.graph import StateGraph, START, END
 from typing import TypedDict
@@ -10,39 +12,63 @@ load_dotenv(cwd/".env")
 
 llm = ChatOpenRouter(
     model="deepseek/deepseek-v4-flash",
+    openrouter_provider={
+        "order":["baidu", "streamlake"], 
+        "allow_fallbacks": True
+        }
+    ,
     temperature=0
 )
 
 
 # Create a state
-class LLMState(TypedDict):
-    question: str
-    answer: str
-    
-# Create graph
-graph = StateGraph(LLMState)
+class BlogState(TypedDict):
+    title: str
+    outline: str
+    content: str    
 
-# Add node
-def llm_qa(state:LLMState) -> LLMState:
-    question = state["question"]
+# Create graph
+graph = StateGraph(BlogState)
+
+# nodes
+def create_outline(state: BlogState) -> BlogState:
+    title = state["title"]
     
-    prompt = f"Answer the following question {question}"
+    prompt = f"Write outline for a blog on the title - {title}."
     
-    answer = llm.invoke(prompt).content
+    result = llm.invoke(prompt).content
+    state["outline"] = result
+    print("outline invoked")
+    return state
+
+def create_content(state: BlogState) -> BlogState:
+    title = state["title"]
+    outline = state["outline"]
     
-    state['answer'] = answer
+    prompt = f"Write a detailed blog on the title - {title} using the following outline \n {outline}"
     
+    result = llm.invoke(prompt).content
+    state["content"] = result
+    print("content invoked")
     return state
     
-graph.add_node("llm_qa", llm_qa)
 
 
-# Add edge
-graph.add_edge(START, "llm_qa")
-graph.add_edge("llm_qa", END)
+graph.add_node("create_outline", create_outline)
+graph.add_node("create_content", create_content)
 
+# Add edges
+graph.add_edge(START, "create_outline")
+graph.add_edge("create_outline", "create_content")
+graph.add_edge("create_content", END)
+
+
+# Compile Graph
 workflow = graph.compile()
 
-initial_state = {"question": "How far is moon from earth?"}
-result = workflow.invoke(initial_state)
-print(result)
+# Invoke
+initial_state = {"title": "Acceptance of Failure is required for Growth."}
+result:BlogState = workflow.invoke(initial_state)
+print(result["title"])
+print(result["outline"])
+print(result["content"])
