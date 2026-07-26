@@ -18,6 +18,7 @@ class BMIState(TypedDict):
     weight_kg: float
     height_m: float
     bmi: float
+    category: str
     
 # Define the graph
 graph = StateGraph(BMIState) # Pass the state while defining the graph
@@ -30,12 +31,28 @@ def calculate_bmi(state: BMIState) -> BMIState:
     state["bmi"] = round(bmi, 2)
     return state # Returning state is important    
 
+def label_bmi(state:BMIState) -> BMIState:
+    bmi = state["bmi"]
+    
+    if bmi < 18.5:
+        state["category"] = "Underweight"
+    elif 18.5 <= bmi < 25:
+        state["category"] = "Normal"
+    elif 25 <= bmi < 30:
+        state["category"] = "Overweight"
+    else:
+        state["category"] = "Obese"
+        
+    return state
+
 # Add Nodes
 graph.add_node("calculate_bmi", calculate_bmi)
+graph.add_node("label_bmi", label_bmi)
 
 # Add Edges
 graph.add_edge(START, "calculate_bmi")
-graph.add_edge("calculate_bmi", END)
+graph.add_edge("calculate_bmi", "label_bmi")
+graph.add_edge("label_bmi", END)
 
 # Compile Graph
 workflow = graph.compile()
