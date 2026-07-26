@@ -8,6 +8,11 @@ load_dotenv(cwd/".env")
 
 llm = ChatOpenRouter(
     model="deepseek/deepseek-v4-flash",
+    openrouter_provider={
+        "order":["baidu", "streamlake"], 
+        "allow_fallbacks": True
+        }
+    
     temperature=0
 )
 
