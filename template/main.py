@@ -1,4 +1,6 @@
 from langchain_openrouter import ChatOpenRouter
+from langgraph.graph import StateGraph, START, END
+from typing import TypedDict
 
 from pathlib import Path
 from dotenv import load_dotenv
@@ -16,3 +18,12 @@ llm = ChatOpenRouter(
     temperature=0
 )
 
+class DummyState(TypedDict):
+    key: str
+    
+graph = StateGraph(DummyState)
+workflow = graph.compile()
+
+png_bytes = workflow.get_graph().draw_mermaid_png()
+with open(cwd/"graph.png", "wb") as f:
+	f.write(png_bytes)
