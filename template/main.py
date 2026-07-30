@@ -25,5 +25,5 @@ graph = StateGraph(DummyState)
 workflow = graph.compile()
 
 png_bytes = workflow.get_graph().draw_mermaid_png()
-with open(cwd/"graph.png", "wb") as f:
+with open(cwd/f"{__file__.split(".")[0]}.png", "wb") as f:
 	f.write(png_bytes)
