@@ -17,9 +17,7 @@ llm = ChatOpenRouter(
         "order": ["baidu", "streamlake"],
         "allow_fallbacks": True
         },
-    temperature=0,
-    max_retries=5,
-    request_timeout=30
+    temperature=0
 )
 
 class ChatState(TypedDict):
