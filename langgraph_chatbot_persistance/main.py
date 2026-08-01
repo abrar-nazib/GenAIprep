@@ -65,16 +65,17 @@ print("-"*30)
 
 print(workflow.invoke({"topic": "Pasta"}, config2))
 
-print("-"*30)
+# print("-"*30)
 
-print(workflow.get_state(config1))
-print()
-print(workflow.get_state_history(config1))
+# print(workflow.get_state(config1))
+# print()
+# print(workflow.get_state_history(config1))
 
-print("-"*30)
+# print("-"*30)
 
-print(workflow.get_state(config2))
-print()
-print(workflow.get_state_history(config2))
+# print(workflow.get_state(config2))
+# print()
+# print(workflow.get_state_history(config2))
 
-print(list(workflow.get_state_history(config2)))
+
+
