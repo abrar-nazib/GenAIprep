@@ -4,3 +4,6 @@ __pycache__/
 out.json
 out.md
 .claude/
+*.db
+*.db-shm
+*.db-wal
