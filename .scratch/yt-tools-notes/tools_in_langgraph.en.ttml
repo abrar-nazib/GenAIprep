@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml" xmlns:ttm="http://www.w3.org/ns/ttml#metadata" xmlns:tts="http://www.w3.org/ns/ttml#styling" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" ttp:profile="http://www.w3.org/TR/profile/sdp-us" >
+<head>
+<styling>
+<style xml:id="s1" tts:textAlign="center" tts:extent="90% 90%" tts:origin="5% 5%" tts:displayAlign="after"/>
+<style xml:id="s2" tts:fontSize=".72c" tts:backgroundColor="black" tts:color="white"/>
+</styling>
+<layout>
+<region xml:id="r1" style="s1"/>
+</layout>
+</head>
+<body region="r1">
+<div>
+<p begin="00:00:00.000" end="00:00:03.919" style="s2">Hi Guys, My name is Nitesh and you are</p>
+<p begin="00:00:01.839" end="00:00:05.600" style="s2">welcome to my YouTube channel.  In this video</p>
+<p begin="00:00:03.919" end="00:00:07.600" style="s2">also we will continue our Agentic AI Using</p>
+<p begin="00:00:05.600" end="00:00:10.000" style="s2">Landgraph playlist.   For the</p>
+<p begin="00:00:07.600" end="00:00:13.040" style="s2">past several videos, we have been building a chatbot</p>
+<p begin="00:00:10.000" end="00:00:15.120" style="s2">and in every subsequent video,</p>
+<p begin="00:00:13.040" end="00:00:17.760" style="s2">we are adding a new feature to that chatbot.</p>
+<p begin="00:00:15.120" end="00:00:19.840" style="s2">So by this point we have a</p>
+<p begin="00:00:17.760" end="00:00:22.560" style="s2">lot of features in the chatbot.  Our chatbot</p>
+<p begin="00:00:19.840" end="00:00:25.119" style="s2">has a GUI, short-term memory</p>
+<p begin="00:00:22.560" end="00:00:28.560" style="s2">, database persistence, and streaming</p>
+<p begin="00:00:25.119" end="00:00:30.960" style="s2">capabilities.  Now today we are going to add a new feature.</p>
+<p begin="00:00:28.560" end="00:00:32.719" style="s2">Ok?  So let me tell you a</p>
+<p begin="00:00:30.960" end="00:00:36.719" style="s2">problem with our chatbot.</p>
+<p begin="00:00:32.719" end="00:00:38.960" style="s2">Our chatbot is currently connected to Open AI&#39;s LLM on the back end.</p>
+<p begin="00:00:36.719" end="00:00:41.360" style="s2">And that is why</p>
+<p begin="00:00:38.960" end="00:00:44.000" style="s2">you can talk to it.  You</p>
+<p begin="00:00:41.360" end="00:00:47.039" style="s2">can talk about anything and</p>
+<p begin="00:00:44.000" end="00:00:49.760" style="s2">this chatbot will give you the right response.  But till now</p>
+<p begin="00:00:47.039" end="00:00:53.120" style="s2">this chatbot does not have the capability to</p>
+<p begin="00:00:49.760" end="00:00:55.199" style="s2">perform any action for you.</p>
+<p begin="00:00:53.120" end="00:00:58.719" style="s2">So in today&#39;s video we are going to do exactly this.</p>
+<p begin="00:00:55.199" end="00:01:01.359" style="s2">We will have our chatbot</p>
+<p begin="00:00:58.719" end="00:01:03.680" style="s2">perform some actions.  Basically what we are</p>
+<p begin="00:01:01.359" end="00:01:06.560" style="s2">going to do is</p>
+<p begin="00:01:03.680" end="00:01:08.880" style="s2">add some tools to our Chartbot.  Ok?  And</p>
+<p begin="00:01:06.560" end="00:01:11.520" style="s2">what will happen because of adding those tools is that</p>
+<p begin="00:01:08.880" end="00:01:14.400" style="s2">not only will our chatbot be able to talk to us normally,</p>
+<p begin="00:01:11.520" end="00:01:16.960" style="s2">but if we give it any work, then</p>
+<p begin="00:01:14.400" end="00:01:18.960" style="s2">our chatbot can also do that work for us.</p>
+<p begin="00:01:16.960" end="00:01:21.040" style="s2">Ok?  Now honestly there is no</p>
+<p begin="00:01:18.960" end="00:01:23.200" style="s2">limit.  You can attach any kind of tool to</p>
+<p begin="00:01:21.040" end="00:01:25.520" style="s2">your chatbot.  But since this</p>
+<p begin="00:01:23.200" end="00:01:28.400" style="s2">is a beginner friendly tutorial.  So</p>
+<p begin="00:01:25.520" end="00:01:30.400" style="s2">here we will add some basic tools.  So</p>
+<p begin="00:01:28.400" end="00:01:33.360" style="s2">I&#39;m planning to add three tools.  The</p>
+<p begin="00:01:30.400" end="00:01:36.159" style="s2">first tool is where our chatbot will have the</p>
+<p begin="00:01:33.360" end="00:01:38.560" style="s2">capability to perform any</p>
+<p begin="00:01:36.159" end="00:01:41.040" style="s2">numerical calculation.  Basically,</p>
+<p begin="00:01:38.560" end="00:01:43.280" style="s2">we will give our chatbot a calculator tool.  The</p>
+<p begin="00:01:41.040" end="00:01:46.240" style="s2">second capability we will provide will be to</p>
+<p begin="00:01:43.280" end="00:01:48.960" style="s2">search the internet.  At this point,</p>
+<p begin="00:01:46.240" end="00:01:51.040" style="s2">our chatbot does not have the</p>
+<p begin="00:01:48.960" end="00:01:52.880" style="s2">capability to go online and search for things.  For</p>
+<p begin="00:01:51.040" end="00:01:55.200" style="s2">example, if I ask my chatbot,</p>
+<p begin="00:01:52.880" end="00:01:57.200" style="s2">tell me what is the top news in India today</p>
+<p begin="00:01:55.200" end="00:02:00.000" style="s2">?  Our chatbot won&#39;t be able to tell us this.</p>
+<p begin="00:01:57.200" end="00:02:02.880" style="s2">But after adding this tool to the internet</p>
+<p begin="00:02:00.000" end="00:02:05.439" style="s2">search tool in our chatbot, we will be able to go and</p>
+<p begin="00:02:02.880" end="00:02:07.680" style="s2">search on the internet and get our</p>
+<p begin="00:02:05.439" end="00:02:11.360" style="s2">results.  And the third capability that we are</p>
+<p begin="00:02:07.680" end="00:02:14.080" style="s2">going to add is the stock tool where you</p>
+<p begin="00:02:11.360" end="00:02:16.480" style="s2">can enter the name of any company and that tool will bring</p>
+<p begin="00:02:14.080" end="00:02:19.280" style="s2">you the stock price of that company at that moment.</p>
+<p begin="00:02:16.480" end="00:02:21.680" style="s2">Ok?</p>
+<p begin="00:02:19.280" end="00:02:23.760" style="s2">So this is what we are going to achieve in today&#39;s video.</p>
+<p begin="00:02:21.680" end="00:02:25.760" style="s2">So I have prepared the demo.  Let</p>
+<p begin="00:02:23.760" end="00:02:28.319" style="s2">me show you a demo.  So</p>
+<p begin="00:02:25.760" end="00:02:30.319" style="s2">if you talk to the chatbot normally, if you say</p>
+<p begin="00:02:28.319" end="00:02:32.720" style="s2">hi then it will function in normal mode.</p>
+<p begin="00:02:30.319" end="00:02:35.360" style="s2">But as soon as you give him any work,</p>
+<p begin="00:02:32.720" end="00:02:37.840" style="s2">he will identify which tool he should use</p>
+<p begin="00:02:35.360" end="00:02:40.560" style="s2">and then he will use that particular tool</p>
+<p begin="00:02:37.840" end="00:02:42.319" style="s2">which he feels is the right tool to</p>
+<p begin="00:02:40.560" end="00:02:45.280" style="s2">execute this particular task.</p>
+<p begin="00:02:42.319" end="00:02:52.160" style="s2">For example, if I ask him,</p>
+<p begin="00:02:45.280" end="00:02:54.480" style="s2">what happened to the Mumbai Monorail last</p>
+<p begin="00:02:52.160" end="00:02:57.760" style="s2">week?  Suppose I asked this question.  Ok</p>
+<p begin="00:02:54.480" end="00:02:59.760" style="s2">?  Now if the chatbot does not have this particular information then</p>
+<p begin="00:02:57.760" end="00:03:02.800" style="s2">it will immediately go and start</p>
+<p begin="00:02:59.760" end="00:03:04.640" style="s2">searching on the internet.  Look, here</p>
+<p begin="00:03:02.800" end="00:03:07.200" style="s2">you might have noticed that it came and went very quickly, but it was</p>
+<p begin="00:03:04.640" end="00:03:10.480" style="s2">written there that it was using Duck Duck</p>
+<p begin="00:03:07.200" end="00:03:12.800" style="s2">Go search tool.  So Duck Duck Go is a search engine</p>
+<p begin="00:03:10.480" end="00:03:14.959" style="s2">just like Google and our website,</p>
+<p begin="00:03:12.800" end="00:03:17.200" style="s2">our chatbot, is</p>
+<p begin="00:03:14.959" end="00:03:19.360" style="s2">using Duck Duck Go behind the scenes to search the internet.</p>
+<p begin="00:03:17.200" end="00:03:20.800" style="s2">He has not told this answer yet.   Let&#39;s</p>
+<p begin="00:03:19.360" end="00:03:25.360" style="s2"></p>
+<p begin="00:03:20.800" end="00:03:30.319" style="s2">ask who won the South</p>
+<p begin="00:03:25.360" end="00:03:34.319" style="s2">Africa vs Australia ODI match</p>
+<p begin="00:03:30.319" end="00:03:37.440" style="s2">yesterday again using doug doug go search</p>
+<p begin="00:03:34.319" end="00:03:39.680" style="s2">so okay it&#39;s a bit insulting but you</p>
+<p begin="00:03:37.440" end="00:03:41.120" style="s2">get the idea our tool is working from the back.</p>
+<p begin="00:03:39.680" end="00:03:42.799" style="s2">It&#39;s just that he is</p>
+<p begin="00:03:41.120" end="00:03:45.120" style="s2">not able to give good results.  I&#39;m really thinking</p>
+<p begin="00:03:42.799" end="00:03:48.080" style="s2">I can show you something where</p>
+<p begin="00:03:45.120" end="00:03:49.840" style="s2">we can get the right answer.  But again, okay.  Let</p>
+<p begin="00:03:48.080" end="00:03:56.000" style="s2">me show you another tool.  Let&#39;s</p>
+<p begin="00:03:49.840" end="00:03:59.519" style="s2">say what is the product of 654</p>
+<p begin="00:03:56.000" end="00:04:00.959" style="s2">and 713 okay and I hit enter now</p>
+<p begin="00:03:59.519" end="00:04:03.680" style="s2">see there it is visible using</p>
+<p begin="00:04:00.959" end="00:04:05.760" style="s2">calculator and using calculator this is the</p>
+<p begin="00:04:03.680" end="00:04:08.239" style="s2">output okay again you can cross check</p>
+<p begin="00:04:05.760" end="00:04:10.319" style="s2">similarly we also have a third tool where</p>
+<p begin="00:04:08.239" end="00:04:11.920" style="s2">you can find out what is the stock price of any company at this</p>
+<p begin="00:04:10.319" end="00:04:14.959" style="s2">point like</p>
+<p begin="00:04:11.920" end="00:04:18.639" style="s2">I said what is the current stock</p>
+<p begin="00:04:14.959" end="00:04:20.880" style="s2">price of Tesla so see he is using a third tool by saying get</p>
+<p begin="00:04:18.639" end="00:04:22.560" style="s2">stock price and</p>
+<p begin="00:04:20.880" end="00:04:25.600" style="s2">saying that the current stock price of</p>
+<p begin="00:04:22.560" end="00:04:28.400" style="s2">Tesla is $323.</p>
+<p begin="00:04:25.600" end="00:04:31.360" style="s2">Ok?  So this is the power of tools.  Not</p>
+<p begin="00:04:28.400" end="00:04:34.000" style="s2">only are you able to talk to your chatbot,</p>
+<p begin="00:04:31.360" end="00:04:35.919" style="s2">but at the same time you can also get some work done from it</p>
+<p begin="00:04:34.000" end="00:04:38.320" style="s2">with the help of these tools.  Ok</p>
+<p begin="00:04:35.919" end="00:04:40.880" style="s2">?  Again what I&#39;m thinking is if</p>
+<p begin="00:04:38.320" end="00:04:44.800" style="s2">I can show you at least one use case</p>
+<p begin="00:04:40.880" end="00:04:50.160" style="s2">performing properly.  So let&#39;s take an example.</p>
+<p begin="00:04:44.800" end="00:04:54.160" style="s2">Suppose who owns YouTube find the</p>
+<p begin="00:04:50.160" end="00:04:56.320" style="s2">stock price of that company.  Ok?  This</p>
+<p begin="00:04:54.160" end="00:04:58.080" style="s2">time we are forcing our chartbot to use two tools.</p>
+<p begin="00:04:56.320" end="00:04:59.840" style="s2">First I</p>
+<p begin="00:04:58.080" end="00:05:02.080" style="s2">want him to search</p>
+<p begin="00:04:59.840" end="00:05:03.600" style="s2">which is the parent company of YouTube and then</p>
+<p begin="00:05:02.080" end="00:05:05.759" style="s2">what is the stock price of that company?  Ok?  Let&#39;s see if it</p>
+<p begin="00:05:03.600" end="00:05:07.440" style="s2">works or not.  Look, first Doug</p>
+<p begin="00:05:05.759" end="00:05:10.880" style="s2">Doug is being searched and thank God he</p>
+<p begin="00:05:07.440" end="00:05:12.639" style="s2">answered.  YouTube is owned by Google.</p>
+<p begin="00:05:10.880" end="00:05:15.840" style="s2">Let me find the stock price of Google</p>
+<p begin="00:05:12.639" end="00:05:20.240" style="s2">for you.  The current stock price of Google is</p>
+<p begin="00:05:15.840" end="00:05:22.479" style="s2">$54.  Ok?  So this is how our chatbot is</p>
+<p begin="00:05:20.240" end="00:05:24.880" style="s2">going to function in the future.  When it</p>
+<p begin="00:05:22.479" end="00:05:27.280" style="s2">receives normal queries, it will</p>
+<p begin="00:05:24.880" end="00:05:29.680" style="s2">operate in normal chat mode.  When you want him to do some work,</p>
+<p begin="00:05:27.280" end="00:05:32.240" style="s2">he will go to the tools and</p>
+<p begin="00:05:29.680" end="00:05:35.039" style="s2">take help and execute the task.</p>
+<p begin="00:05:32.240" end="00:05:37.520" style="s2">Ok?  So today we are going to add this feature</p>
+<p begin="00:05:35.039" end="00:05:39.360" style="s2">to our chat bot.  Ok?  So</p>
+<p begin="00:05:37.520" end="00:05:41.039" style="s2">my plan of action is very simple.  I have</p>
+<p begin="00:05:39.360" end="00:05:44.160" style="s2">divided this entire video into two parts.</p>
+<p begin="00:05:41.039" end="00:05:45.680" style="s2">In the first part I will teach you the</p>
+<p begin="00:05:44.160" end="00:05:49.600" style="s2">fundamentals of</p>
+<p begin="00:05:45.680" end="00:05:52.240" style="s2">how you can add tools to a Lang graph.</p>
+<p begin="00:05:49.600" end="00:05:54.479" style="s2">Ok?  Once</p>
+<p begin="00:05:52.240" end="00:05:57.600" style="s2">you learn this, we will</p>
+<p begin="00:05:54.479" end="00:05:59.280" style="s2">add these three tools to our chatbot project.  So</p>
+<p begin="00:05:57.600" end="00:06:02.000" style="s2">basically this entire video is divided into two parts.</p>
+<p begin="00:05:59.280" end="00:06:04.319" style="s2">Ok?  Now I am</p>
+<p begin="00:06:02.000" end="00:06:06.560" style="s2">not going to go into full depth in this particular video</p>
+<p begin="00:06:04.319" end="00:06:09.039" style="s2">and I am not going to tell you in full detail</p>
+<p begin="00:06:06.560" end="00:06:10.960" style="s2">what the tool is?  What is tool calling</p>
+<p begin="00:06:09.039" end="00:06:12.479" style="s2">?  You should already know all this.</p>
+<p begin="00:06:10.960" end="00:06:15.120" style="s2">If you don&#39;t know, I will</p>
+<p begin="00:06:12.479" end="00:06:17.600" style="s2">suggest you a resource.  I have a Joe</p>
+<p begin="00:06:15.120" end="00:06:20.720" style="s2">Lang Chen playlist that you might have seen as</p>
+<p begin="00:06:17.600" end="00:06:22.800" style="s2">well.  There we covered this topic by</p>
+<p begin="00:06:20.720" end="00:06:25.199" style="s2">calling it tools.  And there I</p>
+<p begin="00:06:22.800" end="00:06:27.360" style="s2">told you in great detail what are tools</p>
+<p begin="00:06:25.199" end="00:06:29.120" style="s2">?  Why are they used?</p>
+<p begin="00:06:27.360" end="00:06:30.960" style="s2">How do LLs call them?  All these</p>
+<p begin="00:06:29.120" end="00:06:32.560" style="s2">concepts are covered in great detail</p>
+<p begin="00:06:30.960" end="00:06:34.240" style="s2">in this video.  If you have not seen this video</p>
+<p begin="00:06:32.560" end="00:06:36.560" style="s2">or you do not know about the tools then</p>
+<p begin="00:06:34.240" end="00:06:38.720" style="s2">I would request you to please</p>
+<p begin="00:06:36.560" end="00:06:40.960" style="s2">watch this video once.  Then you will</p>
+<p begin="00:06:38.720" end="00:06:44.160" style="s2">understand today&#39;s video very well.</p>
+<p begin="00:06:40.960" end="00:06:47.039" style="s2">Ok?  So now that we know what we are going to do in this video</p>
+<p begin="00:06:44.160" end="00:06:50.319" style="s2">and how we are going to do it.</p>
+<p begin="00:06:47.039" end="00:06:52.240" style="s2">Now let&#39;s start the video.  Now</p>
+<p begin="00:06:50.319" end="00:06:54.319" style="s2">how do you add Guys tools to the Lang graph</p>
+<p begin="00:06:52.240" end="00:06:56.160" style="s2">?  Is.  Before doing this practically,</p>
+<p begin="00:06:54.319" end="00:06:58.400" style="s2">I want to teach you some basic theory</p>
+<p begin="00:06:56.160" end="00:07:00.560" style="s2">so that you do not face any problem in understanding the further code.</p>
+<p begin="00:06:58.400" end="00:07:03.440" style="s2">And we&#39;ll</p>
+<p begin="00:07:00.560" end="00:07:05.759" style="s2">start our discussion with the simplest possible workflow.  The</p>
+<p begin="00:07:03.440" end="00:07:08.720" style="s2">simplest workflow we learned to create in Lang Graph was</p>
+<p begin="00:07:05.759" end="00:07:11.440" style="s2">that you</p>
+<p begin="00:07:08.720" end="00:07:13.599" style="s2">have a start note where a user asks</p>
+<p begin="00:07:11.440" end="00:07:16.639" style="s2">what is the capital</p>
+<p begin="00:07:13.599" end="00:07:18.479" style="s2">of India.  And here you create a chat note</p>
+<p begin="00:07:16.639" end="00:07:20.560" style="s2">which basically has an LLM in it</p>
+<p begin="00:07:18.479" end="00:07:24.160" style="s2">and that LLM looks at this question and</p>
+<p begin="00:07:20.560" end="00:07:26.400" style="s2">tells an answer and then you finally</p>
+<p begin="00:07:24.160" end="00:07:29.199" style="s2">end this work flow on the end note.</p>
+<p begin="00:07:26.400" end="00:07:32.080" style="s2">Now let&#39;s talk about our requirements.</p>
+<p begin="00:07:29.199" end="00:07:34.800" style="s2">Now our requirement is that our</p>
+<p begin="00:07:32.080" end="00:07:37.599" style="s2">chatbot wants to do both types of tasks.</p>
+<p begin="00:07:34.800" end="00:07:40.800" style="s2">He also wants to have a normal conversation and if</p>
+<p begin="00:07:37.599" end="00:07:43.520" style="s2">needed, he also wants to do some work.</p>
+<p begin="00:07:40.800" end="00:07:45.759" style="s2">Ok?  So what do we have to do</p>
+<p begin="00:07:43.520" end="00:07:48.080" style="s2">?  This basic work flow will have to be</p>
+<p begin="00:07:45.759" end="00:07:49.759" style="s2">changed a little.  We will have to make two-three changes.  Let</p>
+<p begin="00:07:48.080" end="00:07:51.919" style="s2">me tell you one by one.</p>
+<p begin="00:07:49.759" end="00:07:54.240" style="s2">The first change you will have to make is</p>
+<p begin="00:07:51.919" end="00:07:57.440" style="s2">that here you had created a simple chart node</p>
+<p begin="00:07:54.240" end="00:08:02.319" style="s2">where you had placed an LLM.</p>
+<p begin="00:07:57.440" end="00:08:05.280" style="s2">You will change this and here you will have to do some</p>
+<p begin="00:08:02.319" end="00:08:07.759" style="s2">additional decision making.</p>
+<p begin="00:08:05.280" end="00:08:10.319" style="s2">Will decision making be required?</p>
+<p begin="00:08:07.759" end="00:08:13.120" style="s2">You will have to make a decision that when</p>
+<p begin="00:08:10.319" end="00:08:16.080" style="s2">this question comes to you, you will</p>
+<p begin="00:08:13.120" end="00:08:20.240" style="s2">read the content of this question and try to understand</p>
+<p begin="00:08:16.080" end="00:08:23.520" style="s2">whether your user</p>
+<p begin="00:08:20.240" end="00:08:26.240" style="s2">wants to do simple chatting or he wants to get some work done from you.</p>
+<p begin="00:08:23.520" end="00:08:28.960" style="s2">So if the question is what</p>
+<p begin="00:08:26.240" end="00:08:31.520" style="s2">is the capital of India?  So our chat node will</p>
+<p begin="00:08:28.960" end="00:08:34.959" style="s2">understand that it has to do normal chatting</p>
+<p begin="00:08:31.520" end="00:08:38.640" style="s2">and it will generate normal answer here and</p>
+<p begin="00:08:34.959" end="00:08:42.000" style="s2">go to the end of this path.  But if</p>
+<p begin="00:08:38.640" end="00:08:44.880" style="s2">you ask a question like</p>
+<p begin="00:08:42.000" end="00:08:47.920" style="s2">search the internet and tell me what is today&#39;s top</p>
+<p begin="00:08:44.880" end="00:08:50.240" style="s2">news?  So here your chat node will</p>
+<p begin="00:08:47.920" end="00:08:52.080" style="s2">understand that now I do not want to chat.</p>
+<p begin="00:08:50.240" end="00:08:55.120" style="s2">I have to perform some action.  Then</p>
+<p begin="00:08:52.080" end="00:08:57.200" style="s2">he will take an alternate route.</p>
+<p begin="00:08:55.120" end="00:09:00.160" style="s2">Will take another route.  So the first change you have to make is</p>
+<p begin="00:08:57.200" end="00:09:03.279" style="s2">that this simple chat note which was</p>
+<p begin="00:09:00.160" end="00:09:06.240" style="s2">used only for chatting, you will have to make a</p>
+<p begin="00:09:03.279" end="00:09:08.959" style="s2">basic change in it.  Now he will</p>
+<p begin="00:09:06.240" end="00:09:11.519" style="s2">not only chat but will also make decisions whether</p>
+<p begin="00:09:08.959" end="00:09:13.760" style="s2">he wants to chat or</p>
+<p begin="00:09:11.519" end="00:09:16.160" style="s2">take action.  Ok?  Now let us assume that he has</p>
+<p begin="00:09:13.760" end="00:09:17.839" style="s2">decided that he has to take action.  So now</p>
+<p begin="00:09:16.160" end="00:09:20.880" style="s2">here comes a very important</p>
+<p begin="00:09:17.839" end="00:09:23.839" style="s2">concept.  And the name of this concept is tool</p>
+<p begin="00:09:20.880" end="00:09:26.399" style="s2">node.  So what happens in Landgraph is that</p>
+<p begin="00:09:23.839" end="00:09:28.399" style="s2"></p>
+<p begin="00:09:26.399" end="00:09:32.399" style="s2"></p>
+<p begin="00:09:28.399" end="00:09:34.959" style="s2">you prepare a special node by making a collection of all the tools that you want to add to your system, want to add to your chatbot,</p>
+<p begin="00:09:32.399" end="00:09:38.080" style="s2">and that</p>
+<p begin="00:09:34.959" end="00:09:41.200" style="s2">particular node handles all those tools.</p>
+<p begin="00:09:38.080" end="00:09:43.440" style="s2">Ok?  So this node that you</p>
+<p begin="00:09:41.200" end="00:09:45.920" style="s2">see here, this is a tool</p>
+<p begin="00:09:43.440" end="00:09:48.320" style="s2">node.  And what&#39;s inside it?  All</p>
+<p begin="00:09:45.920" end="00:09:51.279" style="s2">three of our tools are kept inside it.  Our</p>
+<p begin="00:09:48.320" end="00:09:53.040" style="s2">calculator tool is also right here.  So does our Dug Dug Go</p>
+<p begin="00:09:51.279" end="00:09:55.360" style="s2">search tool.  And that&#39;s what our stock</p>
+<p begin="00:09:53.040" end="00:09:57.839" style="s2">price tool is all about.  So now</p>
+<p begin="00:09:55.360" end="00:10:00.399" style="s2">understand how the entire flow is, here the</p>
+<p begin="00:09:57.839" end="00:10:02.880" style="s2">question comes, bring out today&#39;s top news.</p>
+<p begin="00:10:00.399" end="00:10:05.120" style="s2">This chat node detected that</p>
+<p begin="00:10:02.880" end="00:10:06.640" style="s2">he did not want to chat.  The action has to be performed.</p>
+<p begin="00:10:05.120" end="00:10:10.000" style="s2">So what will he do now?</p>
+<p begin="00:10:06.640" end="00:10:12.240" style="s2">This will send the execution flow to the tool node.</p>
+<p begin="00:10:10.000" end="00:10:16.240" style="s2">Now what is the specialty of the tool node is</p>
+<p begin="00:10:12.240" end="00:10:18.800" style="s2">that it automatically understands</p>
+<p begin="00:10:16.240" end="00:10:22.240" style="s2">which tool it has to execute.</p>
+<p begin="00:10:18.800" end="00:10:24.240" style="s2">From here he is getting the name of the tool and</p>
+<p begin="00:10:22.240" end="00:10:27.040" style="s2">what input has to be given to that tool.   For example,</p>
+<p begin="00:10:24.240" end="00:10:29.360" style="s2">if you ask this query,</p>
+<p begin="00:10:27.040" end="00:10:32.880" style="s2">tell me today&#39;s top news.  So our</p>
+<p begin="00:10:29.360" end="00:10:35.040" style="s2">LLM will not only tell us to</p>
+<p begin="00:10:32.880" end="00:10:37.040" style="s2">use the Doug Doug Go search tool but will</p>
+<p begin="00:10:35.040" end="00:10:39.040" style="s2">also tell us what input to enter in that search tool.</p>
+<p begin="00:10:37.040" end="00:10:42.640" style="s2">Top News in India</p>
+<p begin="00:10:39.040" end="00:10:44.640" style="s2">Today.  Now this whole thing came to the tool node.</p>
+<p begin="00:10:42.640" end="00:10:46.720" style="s2">What will the Tool node do?  He has all the tools</p>
+<p begin="00:10:44.640" end="00:10:49.120" style="s2">sitting next to him.  He will tell the Duck Duck search tool</p>
+<p begin="00:10:46.720" end="00:10:51.440" style="s2">that now you start doing your work</p>
+<p begin="00:10:49.120" end="00:10:54.720" style="s2">and you have got the</p>
+<p begin="00:10:51.440" end="00:10:57.279" style="s2">top news in India today in the input.  And then your</p>
+<p begin="00:10:54.720" end="00:10:59.839" style="s2">tool will execute and it will print the answer</p>
+<p begin="00:10:57.279" end="00:11:02.720" style="s2">and your work flow will end.</p>
+<p begin="00:10:59.839" end="00:11:06.240" style="s2">Ok?  So in a nutshell, the tool node is basically</p>
+<p begin="00:11:02.720" end="00:11:08.800" style="s2">this place where all your tools reside.</p>
+<p begin="00:11:06.240" end="00:11:10.720" style="s2">And the tool node is the cow that</p>
+<p begin="00:11:08.800" end="00:11:12.560" style="s2">executes your tools.  So in a way</p>
+<p begin="00:11:10.720" end="00:11:14.959" style="s2">you can tell him that it is our tool</p>
+<p begin="00:11:12.560" end="00:11:16.640" style="s2">executor.  Ok?  If you want to</p>
+<p begin="00:11:14.959" end="00:11:19.040" style="s2">see a more formal definition,</p>
+<p begin="00:11:16.640" end="00:11:21.440" style="s2">I have written it here.  In Langraph a tool node</p>
+<p begin="00:11:19.040" end="00:11:23.680" style="s2">is a prebuilt node.  We did not make it.  This</p>
+<p begin="00:11:21.440" end="00:11:26.399" style="s2">functionality is provided by Langraph.  That</p>
+<p begin="00:11:23.680" end="00:11:29.120" style="s2">acts as a bridge between your graph</p>
+<p begin="00:11:26.399" end="00:11:31.279" style="s2">and external tools.  Normally in Langgraf</p>
+<p begin="00:11:29.120" end="00:11:33.600" style="s2">you would write a node function yourself.  It</p>
+<p begin="00:11:31.279" end="00:11:37.360" style="s2">takes in a state return state.  A tool node</p>
+<p begin="00:11:33.600" end="00:11:40.000" style="s2">is a ready-made node that knows how to handle a</p>
+<p begin="00:11:37.360" end="00:11:43.120" style="s2">list of long chain tools.  Ok?  It&#39;s</p>
+<p begin="00:11:40.000" end="00:11:46.079" style="s2">job is to listen for tool calls.  The tool that LLM has</p>
+<p begin="00:11:43.120" end="00:11:48.240" style="s2">called will continue to listen to it.  And</p>
+<p begin="00:11:46.079" end="00:11:50.720" style="s2">as soon as it receives a tool call, it will</p>
+<p begin="00:11:48.240" end="00:11:53.839" style="s2">automatically route that request</p>
+<p begin="00:11:50.720" end="00:11:56.480" style="s2">to the correct tool.  And then</p>
+<p begin="00:11:53.839" end="00:11:59.760" style="s2">you will start seeing the response of the tool.  Here</p>
+<p begin="00:11:56.480" end="00:12:03.360" style="s2">you will have to learn another technical term</p>
+<p begin="00:11:59.760" end="00:12:07.680" style="s2">and the name of this technical term is tools</p>
+<p begin="00:12:03.360" end="00:12:11.040" style="s2">condition.  So this is an inbuilt function</p>
+<p begin="00:12:07.680" end="00:12:14.079" style="s2">of the long graph that you use at this place</p>
+<p begin="00:12:11.040" end="00:12:17.120" style="s2">inside your chat node.  And these tools condition</p>
+<p begin="00:12:14.079" end="00:12:20.160" style="s2">itself tells you whether</p>
+<p begin="00:12:17.120" end="00:12:22.880" style="s2">you have to chat or</p>
+<p begin="00:12:20.160" end="00:12:25.519" style="s2">call the tool as per your query.  Ok?  So here you can see this is</p>
+<p begin="00:12:22.880" end="00:12:27.600" style="s2">a conditional flow.  Either</p>
+<p begin="00:12:25.519" end="00:12:30.240" style="s2">you will go to this place or you will go to another place.</p>
+<p begin="00:12:27.600" end="00:12:32.639" style="s2">So who is deciding this condition</p>
+<p begin="00:12:30.240" end="00:12:34.240" style="s2">?  This is conditioning the tools.  Ok?</p>
+<p begin="00:12:32.639" end="00:12:36.560" style="s2">I have also written its definition here.   It is</p>
+<p begin="00:12:34.240" end="00:12:39.839" style="s2">written here.  The tools condition is a</p>
+<p begin="00:12:36.560" end="00:12:43.200" style="s2">prebuilt conditional edge function that helps</p>
+<p begin="00:12:39.839" end="00:12:46.959" style="s2">your graph decide whether the flow should go to the tools</p>
+<p begin="00:12:43.200" end="00:12:50.320" style="s2">node and back to the llm.  And to the end node.</p>
+<p begin="00:12:46.959" end="00:12:52.880" style="s2">Ok?  So with the help of tools condition, this</p>
+<p begin="00:12:50.320" end="00:12:54.959" style="s2">particular node is able to tell you whether it has to</p>
+<p begin="00:12:52.880" end="00:12:56.959" style="s2">execute the normal LLM</p>
+<p begin="00:12:54.959" end="00:12:58.800" style="s2">or go to the tools.  Ok?  So</p>
+<p begin="00:12:56.959" end="00:13:00.959" style="s2">you have to focus on only two new concepts.</p>
+<p begin="00:12:58.800" end="00:13:02.240" style="s2">What is a tool node and what is a tool condition.</p>
+<p begin="00:13:00.959" end="00:13:04.480" style="s2">If you understand these two things then the</p>
+<p begin="00:13:02.240" end="00:13:06.800" style="s2">further code will seem very</p>
+<p begin="00:13:04.480" end="00:13:10.000" style="s2">easy to you.  Come on guys, let&#39;s see</p>
+<p begin="00:13:06.800" end="00:13:12.480" style="s2">how you can add tools inside the LangGraph in code.</p>
+<p begin="00:13:10.000" end="00:13:14.000" style="s2">Ok?  I have</p>
+<p begin="00:13:12.480" end="00:13:15.920" style="s2">written the code.  Let me give you a walk through.</p>
+<p begin="00:13:14.000" end="00:13:18.480" style="s2">In the first sale, we have</p>
+<p begin="00:13:15.920" end="00:13:21.120" style="s2">purchased all the necessary imports.</p>
+<p begin="00:13:18.480" end="00:13:23.519" style="s2">You have seen most of the things here.   Let</p>
+<p begin="00:13:21.120" end="00:13:26.720" style="s2">me show you the new things.</p>
+<p begin="00:13:23.519" end="00:13:28.399" style="s2">A Like this is a new thing and it&#39;s</p>
+<p begin="00:13:26.720" end="00:13:31.360" style="s2">exactly what we just discussed.</p>
+<p begin="00:13:28.399" end="00:13:34.720" style="s2">We are importing the</p>
+<p begin="00:13:31.360" end="00:13:37.120" style="s2">tool node and tool condition from inside the Langraft.prebuilt.</p>
+<p begin="00:13:34.720" end="00:13:40.160" style="s2">Ok?  Plus we&#39;re</p>
+<p begin="00:13:37.120" end="00:13:42.160" style="s2"></p>
+<p begin="00:13:40.160" end="00:13:44.160" style="s2">importing a tool from the Lang Chen community dot tools called Dug Dug Go Search Run Lyrics</p>
+<p begin="00:13:42.160" end="00:13:47.440" style="s2">which we also read in the Lang Chen playlist.</p>
+<p begin="00:13:44.160" end="00:13:50.079" style="s2">Ok?  And on top of that, we&#39;re</p>
+<p begin="00:13:47.440" end="00:13:52.800" style="s2">importing the tool from within the Lang Chen core tools.</p>
+<p begin="00:13:50.079" end="00:13:54.399" style="s2">Because we</p>
+<p begin="00:13:52.800" end="00:13:57.760" style="s2">want to create our own custom tools.  Like a</p>
+<p begin="00:13:54.399" end="00:13:59.920" style="s2">calculator.  So we ran this code.</p>
+<p begin="00:13:57.760" end="00:14:01.680" style="s2">Here we have loaded our environment file.</p>
+<p begin="00:13:59.920" end="00:14:04.480" style="s2">Here we are creating an</p>
+<p begin="00:14:01.680" end="00:14:06.399" style="s2">LLM which is the LLM of Chat Open AI.</p>
+<p begin="00:14:04.480" end="00:14:08.959" style="s2">Ok?  Now here comes the most</p>
+<p begin="00:14:06.399" end="00:14:11.040" style="s2">important step.  Here we are creating all three of our</p>
+<p begin="00:14:08.959" end="00:14:15.120" style="s2">tools.  Ok?  Which</p>
+<p begin="00:14:11.040" end="00:14:17.199" style="s2">three?  Dug Dug Go, a calculator and stock</p>
+<p begin="00:14:15.120" end="00:14:19.760" style="s2">price guy.  Ok?  Now here you should</p>
+<p begin="00:14:17.199" end="00:14:21.279" style="s2">know a concept.  There are two types of tools</p>
+<p begin="00:14:19.760" end="00:14:24.160" style="s2">in the luck chain.  One is</p>
+<p begin="00:14:21.279" end="00:14:26.240" style="s2">prebuilt, the other is custom.  A prebuilt is a</p>
+<p begin="00:14:24.160" end="00:14:28.959" style="s2">tool that the lung chain already gives you.</p>
+<p begin="00:14:26.240" end="00:14:31.600" style="s2">Like the Dug Dug Go Search tool,</p>
+<p begin="00:14:28.959" end="00:14:34.160" style="s2">it is a prebuilt tool.  Lung Chen thinks there are a</p>
+<p begin="00:14:31.600" end="00:14:36.480" style="s2">lot of use cases where</p>
+<p begin="00:14:34.160" end="00:14:38.240" style="s2">you&#39;ll need to search the internet.</p>
+<p begin="00:14:36.480" end="00:14:40.240" style="s2">So they have created this tool and given it to you.</p>
+<p begin="00:14:38.240" end="00:14:42.639" style="s2">You don&#39;t need to recreate it.</p>
+<p begin="00:14:40.240" end="00:14:45.120" style="s2">Then there is the second type of tool</p>
+<p begin="00:14:42.639" end="00:14:48.160" style="s2">where you as a programmer create your own tools</p>
+<p begin="00:14:45.120" end="00:14:51.600" style="s2">according to your custom use case.</p>
+<p begin="00:14:48.160" end="00:14:54.079" style="s2">Ok?  So here we are</p>
+<p begin="00:14:51.600" end="00:14:56.800" style="s2">creating our own tool called a calculator.  And to</p>
+<p begin="00:14:54.079" end="00:14:58.720" style="s2">create your own tool, you use the @tool decorator.</p>
+<p begin="00:14:56.800" end="00:15:00.800" style="s2">Again, I have</p>
+<p begin="00:14:58.720" end="00:15:03.440" style="s2">taught you all these concepts in that Langchen video.</p>
+<p begin="00:15:00.800" end="00:15:06.720" style="s2">Ok?  So there is nothing special here.</p>
+<p begin="00:15:03.440" end="00:15:09.199" style="s2">Our first tool became Dug Dug Go Search Run.</p>
+<p begin="00:15:06.720" end="00:15:12.000" style="s2">We put this into a variable.</p>
+<p begin="00:15:09.199" end="00:15:14.800" style="s2">After that we created a second function called</p>
+<p begin="00:15:12.000" end="00:15:16.800" style="s2">calculator.  We put the @ tool on top of that.</p>
+<p begin="00:15:14.800" end="00:15:19.360" style="s2">So it became a tool.  Ok?</p>
+<p begin="00:15:16.800" end="00:15:22.079" style="s2">You will understand this calculator code just by looking at it.  It</p>
+<p begin="00:15:19.360" end="00:15:24.079" style="s2">is very basic code.  If we</p>
+<p begin="00:15:22.079" end="00:15:25.920" style="s2">need three inputs.  What is the first number?</p>
+<p begin="00:15:24.079" end="00:15:27.680" style="s2">What is the second number?  And what</p>
+<p begin="00:15:25.920" end="00:15:30.079" style="s2">operation needs to be performed between them?  Plus minus</p>
+<p begin="00:15:27.680" end="00:15:32.480" style="s2">multiplication division.  Ok?</p>
+<p begin="00:15:30.079" end="00:15:36.000" style="s2">We have installed If Else inside.  And this is giving</p>
+<p begin="00:15:32.480" end="00:15:40.000" style="s2">us the output.  Ok?  And the third tool is</p>
+<p begin="00:15:36.000" end="00:15:42.240" style="s2">Get Stock Price Bol Ke.  Ok?  So</p>
+<p begin="00:15:40.000" end="00:15:44.880" style="s2">here we are using this particular API.</p>
+<p begin="00:15:42.240" end="00:15:48.480" style="s2">There is this website called Alpha</p>
+<p begin="00:15:44.880" end="00:15:51.120" style="s2">Vantage.  Here you will have to create an API key.  It&#39;s</p>
+<p begin="00:15:48.480" end="00:15:53.920" style="s2">free.  Make it.  Don&#39;t use mine.  It</p>
+<p begin="00:15:51.120" end="00:15:57.600" style="s2">ends very quickly.</p>
+<p begin="00:15:53.920" end="00:15:59.759" style="s2">Its daily usage.  So this is also simply</p>
+<p begin="00:15:57.600" end="00:16:02.000" style="s2">returning it to you.  Whatever</p>
+<p begin="00:15:59.759" end="00:16:03.680" style="s2">data it is getting in JSON.  Ok?  There is just</p>
+<p begin="00:16:02.000" end="00:16:06.160" style="s2">one thing you have to remember here.  I have told you this.</p>
+<p begin="00:16:03.680" end="00:16:08.079" style="s2">Aldo, whenever you are creating your own tool,</p>
+<p begin="00:16:06.160" end="00:16:10.560" style="s2">you must definitely add this doc string there.</p>
+<p begin="00:16:08.079" end="00:16:12.800" style="s2">Where you tell what is the</p>
+<p begin="00:16:10.560" end="00:16:14.880" style="s2">exact work of this tool.  Ok?</p>
+<p begin="00:16:12.800" end="00:16:17.120" style="s2">He studies LLM and accordingly</p>
+<p begin="00:16:14.880" end="00:16:18.800" style="s2">decides which tool he should use</p>
+<p begin="00:16:17.120" end="00:16:20.959" style="s2"></p>
+<p begin="00:16:18.800" end="00:16:23.440" style="s2">in a particular problem statement.  Ok?  So these are our three</p>
+<p begin="00:16:20.959" end="00:16:25.519" style="s2">tools.  We made all three of these.</p>
+<p begin="00:16:23.440" end="00:16:27.839" style="s2">what shall we do now?  We are making a list</p>
+<p begin="00:16:25.519" end="00:16:29.920" style="s2">of all the tools.  So we have three tools.</p>
+<p begin="00:16:27.839" end="00:16:32.000" style="s2">We put all three of them in a list</p>
+<p begin="00:16:29.920" end="00:16:33.759" style="s2">and created a variable called tools.  Ok</p>
+<p begin="00:16:32.000" end="00:16:35.120" style="s2">?  So inside tools we have all three of our tools.</p>
+<p begin="00:16:33.759" end="00:16:37.199" style="s2">What am I doing now?  I am</p>
+<p begin="00:16:35.120" end="00:16:39.600" style="s2">telling my LLM that look brother, we have</p>
+<p begin="00:16:37.199" end="00:16:41.600" style="s2">these three tools.  So</p>
+<p begin="00:16:39.600" end="00:16:43.680" style="s2">we are using the bind tools function and</p>
+<p begin="00:16:41.600" end="00:16:45.680" style="s2">we are assigning this entire list of tools.</p>
+<p begin="00:16:43.680" end="00:16:47.440" style="s2">Now from here the work of lung</p>
+<p begin="00:16:45.680" end="00:16:49.279" style="s2">graph starts which you have already done many times.</p>
+<p begin="00:16:47.440" end="00:16:51.680" style="s2">So first of all we created a state.  The</p>
+<p begin="00:16:49.279" end="00:16:54.160" style="s2">state is very simple.  There&#39;s just a</p>
+<p begin="00:16:51.680" end="00:16:55.920" style="s2">message-based variable that was exactly what we had</p>
+<p begin="00:16:54.160" end="00:16:58.079" style="s2">in our Chart Bot project.</p>
+<p begin="00:16:55.920" end="00:17:02.240" style="s2">Exactly the same, nothing different.  Now here</p>
+<p begin="00:16:58.079" end="00:17:04.559" style="s2">comes the main funda that in the workflow that we have to</p>
+<p begin="00:17:02.240" end="00:17:08.720" style="s2">create, we are going to create two</p>
+<p begin="00:17:04.559" end="00:17:12.160" style="s2">nodes.  The first node is this chat node and the</p>
+<p begin="00:17:08.720" end="00:17:13.600" style="s2">second one is this tool node.  Ok?  So look, this is exactly what</p>
+<p begin="00:17:12.160" end="00:17:16.880" style="s2">I have done here.</p>
+<p begin="00:17:13.600" end="00:17:19.199" style="s2">We first created a state graph object at this location</p>
+<p begin="00:17:16.880" end="00:17:22.319" style="s2">and added two nodes to it.</p>
+<p begin="00:17:19.199" end="00:17:24.880" style="s2">The first is the chat node and the second is the tools node.  Now</p>
+<p begin="00:17:22.319" end="00:17:27.120" style="s2">where did this tool node come from?  We called the tool node</p>
+<p begin="00:17:24.880" end="00:17:29.600" style="s2">built in function and</p>
+<p begin="00:17:27.120" end="00:17:32.080" style="s2">passed our tools inside it.  So, this automatically</p>
+<p begin="00:17:29.600" end="00:17:34.240" style="s2">became a tool node.  And</p>
+<p begin="00:17:32.080" end="00:17:35.520" style="s2">what code is written inside the chat node?  Exactly the same code is</p>
+<p begin="00:17:34.240" end="00:17:37.360" style="s2">written which we</p>
+<p begin="00:17:35.520" end="00:17:39.840" style="s2">wrote in the chatbot project.  We&#39;re reading our messages</p>
+<p begin="00:17:37.360" end="00:17:41.600" style="s2">and calling LL with tools.  They are</p>
+<p begin="00:17:39.840" end="00:17:43.440" style="s2"></p>
+<p begin="00:17:41.600" end="00:17:45.120" style="s2">not calling it normal LLM, they are calling it LLM with Tools.</p>
+<p begin="00:17:43.440" end="00:17:47.280" style="s2"></p>
+<p begin="00:17:45.120" end="00:17:49.600" style="s2">Providing all your messages till now.</p>
+<p begin="00:17:47.280" end="00:17:52.240" style="s2">We are getting the response that is coming in return.  So this is</p>
+<p begin="00:17:49.600" end="00:17:54.480" style="s2">our structure.  Now</p>
+<p begin="00:17:52.240" end="00:17:57.520" style="s2">how will the edges be drawn between them?  It is very simple.</p>
+<p begin="00:17:54.480" end="00:18:00.480" style="s2">Your first edge will be between the start and chat nodes.</p>
+<p begin="00:17:57.520" end="00:18:03.280" style="s2">Basically this edge.  What are we doing after that</p>
+<p begin="00:18:00.480" end="00:18:06.400" style="s2">?  Adding a conditional edge</p>
+<p begin="00:18:03.280" end="00:18:09.600" style="s2">that starts from the chat node.  And</p>
+<p begin="00:18:06.400" end="00:18:12.559" style="s2">our tools condition tells us where to go and decide.</p>
+<p begin="00:18:09.600" end="00:18:14.960" style="s2">If there is normal work flow</p>
+<p begin="00:18:12.559" end="00:18:16.799" style="s2">then it will go to the end.  If there is a requirement for tools, the</p>
+<p begin="00:18:14.960" end="00:18:19.520" style="s2">tool will go to the node.</p>
+<p begin="00:18:16.799" end="00:18:21.679" style="s2">So we keep running this</p>
+<p begin="00:18:19.520" end="00:18:25.600" style="s2">once for all the functions and all the</p>
+<p begin="00:18:21.679" end="00:18:27.919" style="s2">cells.  So I guess I</p>
+<p begin="00:18:25.600" end="00:18:30.880" style="s2">drove this far.  I tried this too.  I</p>
+<p begin="00:18:27.919" end="00:18:33.039" style="s2">tried this too.  We ran this as well and then</p>
+<p begin="00:18:30.880" end="00:18:35.440" style="s2">compiled the graph.  And this is our</p>
+<p begin="00:18:33.039" end="00:18:38.720" style="s2">graph.  This is exactly the same graph that</p>
+<p begin="00:18:35.440" end="00:18:41.200" style="s2">we just plotted.  This one.  Ok?</p>
+<p begin="00:18:38.720" end="00:18:43.200" style="s2">Now from here we start asking questions about</p>
+<p begin="00:18:41.200" end="00:18:44.960" style="s2">our work flow.  So,</p>
+<p begin="00:18:43.200" end="00:18:47.440" style="s2">what are we doing?</p>
+<p begin="00:18:44.960" end="00:18:49.360" style="s2">Sending hello by calling chartbot.invoke.  So let&#39;s see</p>
+<p begin="00:18:47.440" end="00:18:51.679" style="s2">what output we are getting in this?  We are</p>
+<p begin="00:18:49.360" end="00:18:54.400" style="s2">getting the output Hi there how can I</p>
+<p begin="00:18:51.679" end="00:18:57.280" style="s2">assist you?  Meaning normal work flow.   I</p>
+<p begin="00:18:54.400" end="00:18:59.919" style="s2">asked a question and the reply from LLM was that the work</p>
+<p begin="00:18:57.280" end="00:19:03.280" style="s2">flow was over.  Now let&#39;s make a chart where there will be a</p>
+<p begin="00:18:59.919" end="00:19:06.480" style="s2">requirement for some tool.  So</p>
+<p begin="00:19:03.280" end="00:19:09.120" style="s2">I said what is the product of 2</p>
+<p begin="00:19:06.480" end="00:19:11.360" style="s2">cross 3, as soon as we run this,</p>
+<p begin="00:19:09.120" end="00:19:13.840" style="s2">look this is our output.  Now this is not a</p>
+<p begin="00:19:11.360" end="00:19:16.640" style="s2">normal output.  This is an output coming</p>
+<p begin="00:19:13.840" end="00:19:18.320" style="s2">from your tool.  Which tool calculator tool.</p>
+<p begin="00:19:16.640" end="00:19:20.240" style="s2">Similarly let us talk about what is</p>
+<p begin="00:19:18.320" end="00:19:22.880" style="s2">the stock price of Apple?  Run this</p>
+<p begin="00:19:20.240" end="00:19:24.640" style="s2">and you can see a JSON</p>
+<p begin="00:19:22.880" end="00:19:27.679" style="s2">with lots of information</p>
+<p begin="00:19:24.640" end="00:19:31.520" style="s2">about Apple stocks.  Ok?  So you</p>
+<p begin="00:19:27.679" end="00:19:33.760" style="s2">can see our flow is working.  If we are having a</p>
+<p begin="00:19:31.520" end="00:19:36.320" style="s2">normal conversation with it then we are going this way</p>
+<p begin="00:19:33.760" end="00:19:38.080" style="s2">and if we want to perform an action then</p>
+<p begin="00:19:36.320" end="00:19:40.960" style="s2">we are going this way.</p>
+<p begin="00:19:38.080" end="00:19:44.320" style="s2">Now I would like you to</p>
+<p begin="00:19:40.960" end="00:19:46.960" style="s2">pause the video once and think whether there is any problem in this particular</p>
+<p begin="00:19:44.320" end="00:19:50.320" style="s2">structure, this particular graph</p>
+<p begin="00:19:46.960" end="00:19:52.880" style="s2">or have we</p>
+<p begin="00:19:50.320" end="00:19:56.000" style="s2">created the perfect structure.  The Answer is the</p>
+<p begin="00:19:52.880" end="00:19:58.720" style="s2">Problem.  The problem is that from the chat node</p>
+<p begin="00:19:56.000" end="00:20:01.280" style="s2">we are going to the tools node.  And</p>
+<p begin="00:19:58.720" end="00:20:03.600" style="s2">then whatever output is coming from the tools node,</p>
+<p begin="00:20:01.280" end="00:20:05.360" style="s2">we are sending it to the end pay and displaying it to the user.</p>
+<p begin="00:20:03.600" end="00:20:07.760" style="s2">But there are two big</p>
+<p begin="00:20:05.360" end="00:20:11.120" style="s2">problems in this.  The first problem is that the</p>
+<p begin="00:20:07.760" end="00:20:13.280" style="s2">output of the tools is not refined or polished enough to be</p>
+<p begin="00:20:11.120" end="00:20:16.080" style="s2"></p>
+<p begin="00:20:13.280" end="00:20:18.160" style="s2">shown directly to the user.  For example, when you</p>
+<p begin="00:20:16.080" end="00:20:20.960" style="s2">asked here to tell the stock price of Apple.</p>
+<p begin="00:20:18.160" end="00:20:23.440" style="s2">So you can see how the output is.</p>
+<p begin="00:20:20.960" end="00:20:26.799" style="s2">A very technical output has come which</p>
+<p begin="00:20:23.440" end="00:20:29.120" style="s2">is basically JSON.  Now a normal user will</p>
+<p begin="00:20:26.799" end="00:20:32.000" style="s2">not understand this output.  Right?</p>
+<p begin="00:20:29.120" end="00:20:35.039" style="s2">Ideally the output should be something like The</p>
+<p begin="00:20:32.000" end="00:20:37.520" style="s2">Current Stock Price of Apple is This Much.  But</p>
+<p begin="00:20:35.039" end="00:20:40.240" style="s2">the problem is that since you have created the structure in such a way</p>
+<p begin="00:20:37.520" end="00:20:42.159" style="s2">that you are going from the chart note to the tool node</p>
+<p begin="00:20:40.240" end="00:20:44.880" style="s2">and from the tool node to the end.</p>
+<p begin="00:20:42.159" end="00:20:48.400" style="s2">So you have no option to</p>
+<p begin="00:20:44.880" end="00:20:50.880" style="s2">show the output of the tool in a polished manner.</p>
+<p begin="00:20:48.400" end="00:20:53.679" style="s2">This is the first problem.  The second problem is</p>
+<p begin="00:20:50.880" end="00:20:56.080" style="s2">that if you do a little more complex</p>
+<p begin="00:20:53.679" end="00:20:59.120" style="s2">query like this query what is</p>
+<p begin="00:20:56.080" end="00:21:02.000" style="s2">the stock price of Apple?  How much would it</p>
+<p begin="00:20:59.120" end="00:21:03.919" style="s2">cost to purchase 15 shares?  If you</p>
+<p begin="00:21:02.000" end="00:21:05.760" style="s2">run this query, see what the output is.</p>
+<p begin="00:21:03.919" end="00:21:08.320" style="s2">Some weird output came in which it was</p>
+<p begin="00:21:05.760" end="00:21:10.640" style="s2">written first number 50, second number</p>
+<p begin="00:21:08.320" end="00:21:14.480" style="s2">zero, operation is multiplication, result is</p>
+<p begin="00:21:10.640" end="00:21:17.280" style="s2">zero.  So what we&#39;re trying to do here is to</p>
+<p begin="00:21:14.480" end="00:21:19.600" style="s2"></p>
+<p begin="00:21:17.280" end="00:21:23.919" style="s2">find out the stock price of Apple in Step One.</p>
+<p begin="00:21:19.600" end="00:21:26.480" style="s2">What do you do once you get the stock price?  You would perform multiplication to find out the</p>
+<p begin="00:21:23.919" end="00:21:29.039" style="s2">price you need to purchase 50 shares.</p>
+<p begin="00:21:26.480" end="00:21:31.440" style="s2"></p>
+<p begin="00:21:29.039" end="00:21:33.679" style="s2">Basically you do two step</p>
+<p begin="00:21:31.440" end="00:21:36.240" style="s2">thinking.  First, use one tool and then</p>
+<p begin="00:21:33.679" end="00:21:39.200" style="s2"></p>
+<p begin="00:21:36.240" end="00:21:42.000" style="s2">use the second tool based on its output.  But since your flow is</p>
+<p begin="00:21:39.200" end="00:21:43.840" style="s2">such that you are moving from chat node to tool node</p>
+<p begin="00:21:42.000" end="00:21:46.720" style="s2">and as soon as the work of tool node is done you are</p>
+<p begin="00:21:43.840" end="00:21:48.640" style="s2">moving to the end then this two step or</p>
+<p begin="00:21:46.720" end="00:21:50.559" style="s2">three step flow is not possible.  So</p>
+<p begin="00:21:48.640" end="00:21:53.360" style="s2">what I&#39;m trying to say is that this</p>
+<p begin="00:21:50.559" end="00:21:55.679" style="s2">structure isn&#39;t entirely correct.</p>
+<p begin="00:21:53.360" end="00:21:59.760" style="s2">What do we have to do?  We will have to modify this structure.</p>
+<p begin="00:21:55.679" end="00:22:03.919" style="s2">We need to</p>
+<p begin="00:21:59.760" end="00:22:06.640" style="s2">send the output of the tool back to the chat node.</p>
+<p begin="00:22:03.919" end="00:22:10.000" style="s2">So suppose if you said find out 2</p>
+<p begin="00:22:06.640" end="00:22:12.880" style="s2">cross 3 or you said find out the</p>
+<p begin="00:22:10.000" end="00:22:16.880" style="s2">stock price of Apple.  So</p>
+<p begin="00:22:12.880" end="00:22:21.200" style="s2">what will happen?  From here you will come to the tool.   The</p>
+<p begin="00:22:16.880" end="00:22:23.919" style="s2">tool will give you JSON.  You will send this Jason back to</p>
+<p begin="00:22:21.200" end="00:22:26.640" style="s2">LLM.  The LLM</p>
+<p begin="00:22:23.919" end="00:22:28.720" style="s2">will see that JSON and he will understand that I have the</p>
+<p begin="00:22:26.640" end="00:22:31.840" style="s2">answer to the question that was asked to me.</p>
+<p begin="00:22:28.720" end="00:22:34.240" style="s2">He will print it in a refined manner and send it through this route.</p>
+<p begin="00:22:31.840" end="00:22:36.080" style="s2">If you</p>
+<p begin="00:22:34.240" end="00:22:38.559" style="s2">want to do a two-step process,</p>
+<p begin="00:22:36.080" end="00:22:40.880" style="s2">tell me the stock price of Apple and tell me how much money will it cost to buy 50 stocks</p>
+<p begin="00:22:38.559" end="00:22:42.960" style="s2">?  So what will happen now?</p>
+<p begin="00:22:40.880" end="00:22:44.480" style="s2">Because it became a kind of loop.  Let me</p>
+<p begin="00:22:42.960" end="00:22:47.679" style="s2">clear this up a bit.  Because</p>
+<p begin="00:22:44.480" end="00:22:49.840" style="s2">I have created too much mess here.</p>
+<p begin="00:22:47.679" end="00:22:52.000" style="s2">So let&#39;s say you want to do a two-step process.</p>
+<p begin="00:22:49.840" end="00:22:54.480" style="s2">Where you want to</p>
+<p begin="00:22:52.000" end="00:22:56.799" style="s2">know the share of Apple first.  You will know the share value and</p>
+<p begin="00:22:54.480" end="00:22:59.120" style="s2">then you will know</p>
+<p begin="00:22:56.799" end="00:23:02.240" style="s2">how much money it will cost to buy 50 shares.  So what will happen?</p>
+<p begin="00:22:59.120" end="00:23:04.159" style="s2">Here when the query came to the chart node, it</p>
+<p begin="00:23:02.240" end="00:23:07.760" style="s2">understood that first I have to find the stock price of Apple.</p>
+<p begin="00:23:04.159" end="00:23:10.159" style="s2">So he will go here and</p>
+<p begin="00:23:07.760" end="00:23:12.480" style="s2">invoke the stock tool and say</p>
+<p begin="00:23:10.159" end="00:23:14.400" style="s2">tell me the stock price of Apple.</p>
+<p begin="00:23:12.480" end="00:23:16.960" style="s2">As soon as you get the stock price of Apple, you will</p>
+<p begin="00:23:14.400" end="00:23:19.039" style="s2">go back on this path.  Now here the chat note</p>
+<p begin="00:23:16.960" end="00:23:21.120" style="s2">again he has the entire history.  So he will</p>
+<p begin="00:23:19.039" end="00:23:23.600" style="s2">understand what the user initially asked?</p>
+<p begin="00:23:21.120" end="00:23:25.280" style="s2">What did I decide then?</p>
+<p begin="00:23:23.600" end="00:23:26.960" style="s2">What did the tool tell me then?  So on this basis he will</p>
+<p begin="00:23:25.280" end="00:23:29.919" style="s2">say that now I have got the stock price of Apple.</p>
+<p begin="00:23:26.960" end="00:23:32.080" style="s2">So now I should</p>
+<p begin="00:23:29.919" end="00:23:33.760" style="s2">calculate how much money it will cost me to buy 50 shares.</p>
+<p begin="00:23:32.080" end="00:23:36.159" style="s2">And for this I should</p>
+<p begin="00:23:33.760" end="00:23:38.240" style="s2">invoke the calculator.  So it will</p>
+<p begin="00:23:36.159" end="00:23:40.960" style="s2">come back to the calculator this way.  He will say that the first</p>
+<p begin="00:23:38.240" end="00:23:42.080" style="s2">number is 50, the second number is the stock price of Apple.</p>
+<p begin="00:23:40.960" end="00:23:44.640" style="s2"></p>
+<p begin="00:23:42.080" end="00:23:46.960" style="s2">Do multiplication between these two.  Whatever result comes will</p>
+<p begin="00:23:44.640" end="00:23:48.720" style="s2">come here.  Now he will again see the entire chat history</p>
+<p begin="00:23:46.960" end="00:23:50.559" style="s2">and will understand that now I have all the</p>
+<p begin="00:23:48.720" end="00:23:53.840" style="s2">answers that I needed to print.</p>
+<p begin="00:23:50.559" end="00:23:56.880" style="s2">Now he will give you the</p>
+<p begin="00:23:53.840" end="00:23:59.679" style="s2">final result through this route.  So basically</p>
+<p begin="00:23:56.880" end="00:24:02.559" style="s2">what do you have to do?  The key here is to create a loop</p>
+<p begin="00:23:59.679" end="00:24:04.720" style="s2">between your LLM and your tools.  Then</p>
+<p begin="00:24:02.559" end="00:24:07.440" style="s2">all these problems will not arise.  Let me</p>
+<p begin="00:24:04.720" end="00:24:09.679" style="s2">show you.  So what I will do is</p>
+<p begin="00:24:07.440" end="00:24:12.640" style="s2">we will make a minor change in this.  And that change is</p>
+<p begin="00:24:09.679" end="00:24:17.279" style="s2">that we&#39;re going to come over here and we&#39;re going to write</p>
+<p begin="00:24:12.640" end="00:24:20.559" style="s2">graph dot start with the add edge tool and we</p>
+<p begin="00:24:17.279" end="00:24:23.520" style="s2">want to create an edge on the chat node as well.</p>
+<p begin="00:24:20.559" end="00:24:26.240" style="s2">Ok?  So let&#39;s do one thing: create a new</p>
+<p begin="00:24:23.520" end="00:24:29.279" style="s2">graph object.  Create new edges.</p>
+<p begin="00:24:26.240" end="00:24:32.159" style="s2">And look, this is the new structure.</p>
+<p begin="00:24:29.279" end="00:24:33.760" style="s2">This is what I want is that we are conditionally either</p>
+<p begin="00:24:32.159" end="00:24:36.480" style="s2">going to the tools or going to the end.</p>
+<p begin="00:24:33.760" end="00:24:38.960" style="s2">From butt tools, we&#39;re always going back to the</p>
+<p begin="00:24:36.480" end="00:24:40.960" style="s2">chat node for sure.  Ok</p>
+<p begin="00:24:38.960" end="00:24:42.799" style="s2">?  Now see how our problem is solved.</p>
+<p begin="00:24:40.960" end="00:24:44.960" style="s2">This is fine.  This is a normal case.</p>
+<p begin="00:24:42.799" end="00:24:46.400" style="s2">Look here what kind of JSON based</p>
+<p begin="00:24:44.960" end="00:24:50.400" style="s2">output was coming now.  Now see what kind of</p>
+<p begin="00:24:46.400" end="00:24:52.640" style="s2">output you will get.  Look the result of 2 * 3 is</p>
+<p begin="00:24:50.400" end="00:24:54.640" style="s2">six.  Why?  Because you sent the output of the tool</p>
+<p begin="00:24:52.640" end="00:24:57.120" style="s2">back to LLM and LLM</p>
+<p begin="00:24:54.640" end="00:24:58.799" style="s2">handled everything correctly.  Ok?  Similarly,</p>
+<p begin="00:24:57.120" end="00:25:02.080" style="s2">look here what kind of technical output was coming just now.</p>
+<p begin="00:24:58.799" end="00:25:04.960" style="s2">Now look right and lastly if you</p>
+<p begin="00:25:02.080" end="00:25:07.600" style="s2">give it two level thinking then let&#39;s see</p>
+<p begin="00:25:04.960" end="00:25:10.159" style="s2">what output comes.  Look, I don&#39;t know</p>
+<p begin="00:25:07.600" end="00:25:13.520" style="s2">the calculation is right or not.</p>
+<p begin="00:25:10.159" end="00:25:16.559" style="s2">Ok?  In fact, they do one thing.  Come on</p>
+<p begin="00:25:13.520" end="00:25:18.559" style="s2">since we have read the length in the last video.</p>
+<p begin="00:25:16.559" end="00:25:22.080" style="s2">So I have actually</p>
+<p begin="00:25:18.559" end="00:25:24.880" style="s2">integrated it with the behind the scenes length.  Here</p>
+<p begin="00:25:22.080" end="00:25:28.000" style="s2">in our env file we have</p>
+<p begin="00:25:24.880" end="00:25:31.360" style="s2">all the variables related to length also.  So let&#39;s do one thing.</p>
+<p begin="00:25:28.000" end="00:25:33.679" style="s2">Let&#39;s check out</p>
+<p begin="00:25:31.360" end="00:25:36.400" style="s2">how this whole thing works behind the scenes.  Let&#39;s</p>
+<p begin="00:25:33.679" end="00:25:39.360" style="s2">go to the length and study it.  So here we go</p>
+<p begin="00:25:36.400" end="00:25:41.520" style="s2">guys inside Langsmith and let me</p>
+<p begin="00:25:39.360" end="00:25:44.240" style="s2">show you a particular trace where</p>
+<p begin="00:25:41.520" end="00:25:47.440" style="s2">we asked this question to our chatbot.</p>
+<p begin="00:25:44.240" end="00:25:49.679" style="s2">What is the stock price of Apple?  Now</p>
+<p begin="00:25:47.440" end="00:25:52.240" style="s2">this entire execution flow can be</p>
+<p begin="00:25:49.679" end="00:25:56.880" style="s2">divided into three parts.</p>
+<p begin="00:25:52.240" end="00:26:00.480" style="s2">The first part is where the control goes</p>
+<p begin="00:25:56.880" end="00:26:02.799" style="s2">to the chat node.  And this question went to the chat node.</p>
+<p begin="00:26:00.480" end="00:26:04.480" style="s2">By the way, ChatNote has all</p>
+<p begin="00:26:02.799" end="00:26:06.720" style="s2">three of these tools available.  It is being shown here.</p>
+<p begin="00:26:04.480" end="00:26:09.360" style="s2">Asked What is the stock</p>
+<p begin="00:26:06.720" end="00:26:12.720" style="s2">price of Apple?  What is the output from the chat note</p>
+<p begin="00:26:09.360" end="00:26:14.640" style="s2">?  He thought he&#39;d call the Get Stock Price tool</p>
+<p begin="00:26:12.720" end="00:26:17.360" style="s2">and send it to</p>
+<p begin="00:26:14.640" end="00:26:20.080" style="s2">Apple as input.  Now if you check the tools conditions here,</p>
+<p begin="00:26:17.360" end="00:26:22.720" style="s2"></p>
+<p begin="00:26:20.080" end="00:26:25.360" style="s2">what is your output for this particular input?  Tools.</p>
+<p begin="00:26:22.720" end="00:26:28.400" style="s2">This means the tools condition is telling you to</p>
+<p begin="00:26:25.360" end="00:26:33.520" style="s2">go from here to here.</p>
+<p begin="00:26:28.400" end="00:26:36.320" style="s2">Ok?  So we went to the tool and we</p>
+<p begin="00:26:33.520" end="00:26:39.279" style="s2">called the tool Get Stock Price.</p>
+<p begin="00:26:36.320" end="00:26:41.760" style="s2">In the input we sent AAPl which is the</p>
+<p begin="00:26:39.279" end="00:26:44.400" style="s2">tucker of Apple.  Ok?  And from this we got</p>
+<p begin="00:26:41.760" end="00:26:47.440" style="s2">all the details in the output which</p>
+<p begin="00:26:44.400" end="00:26:52.400" style="s2">we got from the API.  Ok?  Now again what the control flow is is</p>
+<p begin="00:26:47.440" end="00:26:55.840" style="s2">that from here, from this place, you have to go back to</p>
+<p begin="00:26:52.400" end="00:26:59.360" style="s2">here.  So where did you go back to?</p>
+<p begin="00:26:55.840" end="00:27:01.760" style="s2">near the chart node.  Now the chart node has all this</p>
+<p begin="00:26:59.360" end="00:27:03.840" style="s2">information.</p>
+<p begin="00:27:01.760" end="00:27:06.720" style="s2">This question came first.  After that the chart node</p>
+<p begin="00:27:03.840" end="00:27:10.000" style="s2">said this.  Then Tool said this.  On the basis of all these things</p>
+<p begin="00:27:06.720" end="00:27:12.080" style="s2">he finally gave this output.</p>
+<p begin="00:27:10.000" end="00:27:14.400" style="s2">And here also you can check</p>
+<p begin="00:27:12.080" end="00:27:16.640" style="s2">what is the output of tools condition now?  The</p>
+<p begin="00:27:14.400" end="00:27:18.799" style="s2">output of the tools condition is that you go to the end.</p>
+<p begin="00:27:16.640" end="00:27:22.480" style="s2">This means that now he is saying that you should go to the</p>
+<p begin="00:27:18.799" end="00:27:24.400" style="s2">end of this path.  So by</p>
+<p begin="00:27:22.480" end="00:27:27.600" style="s2">going to Langmuth, you will visualize this whole thing as to</p>
+<p begin="00:27:24.400" end="00:27:29.520" style="s2">when the tool is being called,</p>
+<p begin="00:27:27.600" end="00:27:31.840" style="s2">when the LLM is being called.  Then</p>
+<p begin="00:27:29.520" end="00:27:36.799" style="s2"></p>
+<p begin="00:27:31.840" end="00:27:38.799" style="s2">you will be able to understand this entire learning, this entire concept more deeply.  So now we have</p>
+<p begin="00:27:36.799" end="00:27:41.360" style="s2">completed the first part of the video.</p>
+<p begin="00:27:38.799" end="00:27:44.640" style="s2">If you remember, we had planned to</p>
+<p begin="00:27:41.360" end="00:27:46.480" style="s2">first learn the fundamentals of</p>
+<p begin="00:27:44.640" end="00:27:49.200" style="s2">how to add tools to the long graph.  We</p>
+<p begin="00:27:46.480" end="00:27:51.919" style="s2">learned that.  Now we will</p>
+<p begin="00:27:49.200" end="00:27:54.720" style="s2">add these three tools to our existing Chartbot project.</p>
+<p begin="00:27:51.919" end="00:27:56.799" style="s2">This is our next goal.  So</p>
+<p begin="00:27:54.720" end="00:27:58.720" style="s2">integrating the tools into our Chartbot project is</p>
+<p begin="00:27:56.799" end="00:28:00.880" style="s2">now very easy.  Now that you</p>
+<p begin="00:27:58.720" end="00:28:03.360" style="s2">understand the code.  So what have I done?   We have</p>
+<p begin="00:28:00.880" end="00:28:06.080" style="s2"></p>
+<p begin="00:28:03.360" end="00:28:08.320" style="s2">created a new file inside our project folder.  Ok?  And the name of this file</p>
+<p begin="00:28:06.080" end="00:28:10.240" style="s2">is lang graph underscore tool underscore back</p>
+<p begin="00:28:08.320" end="00:28:13.279" style="s2">end.  Basically, we are rewriting our back end where</p>
+<p begin="00:28:10.240" end="00:28:16.240" style="s2">we had created the entire graph of our chart pot</p>
+<p begin="00:28:13.279" end="00:28:19.679" style="s2">and this will be our</p>
+<p begin="00:28:16.240" end="00:28:21.120" style="s2">new back end.  So there is nothing special.</p>
+<p begin="00:28:19.679" end="00:28:22.720" style="s2"></p>
+<p begin="00:28:21.120" end="00:28:25.520" style="s2">You will see exactly the same things that we just discussed.</p>
+<p begin="00:28:22.720" end="00:28:27.919" style="s2">Same imports are here.  Load</p>
+<p begin="00:28:25.520" end="00:28:30.480" style="s2">dot env.  Here we completed our LLM.</p>
+<p begin="00:28:27.919" end="00:28:33.279" style="s2">Here we have created exactly those</p>
+<p begin="00:28:30.480" end="00:28:36.320" style="s2">three tools.  Search tool, calculator</p>
+<p begin="00:28:33.279" end="00:28:39.039" style="s2">tool and get stock price tool.</p>
+<p begin="00:28:36.320" end="00:28:41.760" style="s2">After that we put the tools again into a variable</p>
+<p begin="00:28:39.039" end="00:28:44.399" style="s2">inside the list and we</p>
+<p begin="00:28:41.760" end="00:28:47.840" style="s2">bind it to the llm.  We have</p>
+<p begin="00:28:44.399" end="00:28:50.880" style="s2">kept the same state here.  Here is the function with the same chat node.</p>
+<p begin="00:28:47.840" end="00:28:53.600" style="s2">This is our tool node.</p>
+<p begin="00:28:50.880" end="00:28:56.000" style="s2">You have already seen this code.  The</p>
+<p begin="00:28:53.600" end="00:28:58.559" style="s2">code for creating the check pointer is:  This is our graph code.</p>
+<p begin="00:28:56.000" end="00:29:01.120" style="s2">Exactly the same thing we just discussed.</p>
+<p begin="00:28:58.559" end="00:29:03.279" style="s2">And this is one of our helper functions that we</p>
+<p begin="00:29:01.120" end="00:29:06.720" style="s2">used in a past video.  So this is</p>
+<p begin="00:29:03.279" end="00:29:08.720" style="s2">our back end and our front</p>
+<p begin="00:29:06.720" end="00:29:10.960" style="s2">end where we have written the code of Streamlet.</p>
+<p begin="00:29:08.720" end="00:29:14.399" style="s2">We don&#39;t need to make any changes there.</p>
+<p begin="00:29:10.960" end="00:29:16.559" style="s2"></p>
+<p begin="00:29:14.399" end="00:29:19.039" style="s2">We&#39;ll use the file we used in the last video as it is.</p>
+<p begin="00:29:16.559" end="00:29:22.320" style="s2">Just one minor change.  Here</p>
+<p begin="00:29:19.039" end="00:29:24.880" style="s2">you will</p>
+<p begin="00:29:22.320" end="00:29:26.960" style="s2">write the name of your new back end file from Langraft Tool Back End.</p>
+<p begin="00:29:24.880" end="00:29:29.600" style="s2">You will remove the name of the old one.  That&#39;s it.</p>
+<p begin="00:29:26.960" end="00:29:32.799" style="s2">Ok?  And what do you have to do after doing so?</p>
+<p begin="00:29:29.600" end="00:29:36.799" style="s2">You have to basically run this code.  So we will</p>
+<p begin="00:29:32.799" end="00:29:40.399" style="s2">simply run this code.  So here&#39;s</p>
+<p begin="00:29:36.799" end="00:29:45.120" style="s2">our front end.  Here we wrote Hi.</p>
+<p begin="00:29:40.399" end="00:29:51.360" style="s2">Here we wrote what is the product of</p>
+<p begin="00:29:45.120" end="00:29:54.399" style="s2">245 or 2456 and 1 2 3 4 and we</p>
+<p begin="00:29:51.360" end="00:29:56.799" style="s2">got our output.  Ok?  There is a problem</p>
+<p begin="00:29:54.399" end="00:29:59.760" style="s2">here.  The problem is that somehow the</p>
+<p begin="00:29:56.799" end="00:30:02.399" style="s2">output of our tool is also getting printed.</p>
+<p begin="00:29:59.760" end="00:30:08.320" style="s2">So let&#39;s take another example.</p>
+<p begin="00:30:02.399" end="00:30:10.399" style="s2">What is the stock price of Apple?  Look,</p>
+<p begin="00:30:08.320" end="00:30:12.240" style="s2">finally we are getting the correct answer but</p>
+<p begin="00:30:10.399" end="00:30:14.799" style="s2">what is the problem that is happening in between, that</p>
+<p begin="00:30:12.240" end="00:30:16.960" style="s2">you can say the output of our tool is</p>
+<p begin="00:30:14.799" end="00:30:19.120" style="s2">also getting printed</p>
+<p begin="00:30:16.960" end="00:30:21.120" style="s2">or streamed.  Now let me</p>
+<p begin="00:30:19.120" end="00:30:23.919" style="s2">tell you what is the reason behind it.  If you</p>
+<p begin="00:30:21.120" end="00:30:25.600" style="s2">go to your front end code,</p>
+<p begin="00:30:23.919" end="00:30:27.279" style="s2">you will see that at the end,</p>
+<p begin="00:30:25.600" end="00:30:29.679" style="s2">where we have written the streaming code,</p>
+<p begin="00:30:27.279" end="00:30:32.159" style="s2">what we are doing there is that</p>
+<p begin="00:30:29.679" end="00:30:34.080" style="s2">any message that we are getting from the back end,</p>
+<p begin="00:30:32.159" end="00:30:36.559" style="s2">we are streaming it and printing it.</p>
+<p begin="00:30:34.080" end="00:30:38.720" style="s2">But actually you should not do this.</p>
+<p begin="00:30:36.559" end="00:30:40.799" style="s2">Two types of messages are coming from behind.  There is</p>
+<p begin="00:30:38.720" end="00:30:42.480" style="s2">an AI message coming in which</p>
+<p begin="00:30:40.799" end="00:30:45.520" style="s2">is sending LLM and there is a tool message coming in which is</p>
+<p begin="00:30:42.480" end="00:30:47.120" style="s2">sending TOOL.  So ideally we want to stream AI messages.  The</p>
+<p begin="00:30:45.520" end="00:30:49.440" style="s2">tool is not supposed to stream messages.</p>
+<p begin="00:30:47.120" end="00:30:52.159" style="s2">So you don&#39;t have to do anything.</p>
+<p begin="00:30:49.440" end="00:30:54.320" style="s2">I have written a piece of code here.</p>
+<p begin="00:30:52.159" end="00:30:57.760" style="s2">Where we have</p>
+<p begin="00:30:54.320" end="00:31:00.399" style="s2">basically modified this thing.  So</p>
+<p begin="00:30:57.760" end="00:31:04.240" style="s2">what you have to do is you have to simply</p>
+<p begin="00:31:00.399" end="00:31:06.720" style="s2">copy this much.  This much.  Now let me</p>
+<p begin="00:31:04.240" end="00:31:10.559" style="s2">paste it once and show you what I did</p>
+<p begin="00:31:06.720" end="00:31:13.520" style="s2">differently this time.  Look, this time</p>
+<p begin="00:31:10.559" end="00:31:17.679" style="s2">we have simply put a check that</p>
+<p begin="00:31:13.520" end="00:31:19.440" style="s2">stream only if there is an AI message.  Do</p>
+<p begin="00:31:17.679" end="00:31:23.039" style="s2">n&#39;t do it otherwise.  And for this we will</p>
+<p begin="00:31:19.440" end="00:31:27.600" style="s2">also have to import AI message here and</p>
+<p begin="00:31:23.039" end="00:31:31.120" style="s2">we will save it.  Will go back and</p>
+<p begin="00:31:27.600" end="00:31:35.440" style="s2">rerun it.  So if we asked what is</p>
+<p begin="00:31:31.120" end="00:31:38.240" style="s2">the share price of</p>
+<p begin="00:31:35.440" end="00:31:41.279" style="s2">Tesla?  So see, this time you are</p>
+<p begin="00:31:38.240" end="00:31:43.440" style="s2">not seeing that message.  Ok?  So I</p>
+<p begin="00:31:41.279" end="00:31:45.840" style="s2">hope the whole concept is clear to you.</p>
+<p begin="00:31:43.440" end="00:31:48.399" style="s2">We created a new file in the back end.  Made</p>
+<p begin="00:31:45.840" end="00:31:51.200" style="s2">two small changes to the front end.  Replaced the back end</p>
+<p begin="00:31:48.399" end="00:31:53.600" style="s2">file and added a filter.</p>
+<p begin="00:31:51.200" end="00:31:55.440" style="s2">Before streaming, we are checking</p>
+<p begin="00:31:53.600" end="00:31:56.880" style="s2">that if there is an AI message then only we will</p>
+<p begin="00:31:55.440" end="00:31:59.600" style="s2">stream.  Otherwise, streaming will</p>
+<p begin="00:31:56.880" end="00:32:01.360" style="s2">not be available.  That&#39;s it.  Now</p>
+<p begin="00:31:59.600" end="00:32:03.679" style="s2">before ending the video, I would like to share one last thing with you.</p>
+<p begin="00:32:01.360" end="00:32:05.600" style="s2">When I</p>
+<p begin="00:32:03.679" end="00:32:09.120" style="s2">showed you the demo at the beginning of the video,</p>
+<p begin="00:32:05.600" end="00:32:12.880" style="s2">you might have noticed that as soon as</p>
+<p begin="00:32:09.120" end="00:32:15.519" style="s2">our chatbot used a tool, we were</p>
+<p begin="00:32:12.880" end="00:32:18.480" style="s2">showing in a status container</p>
+<p begin="00:32:15.519" end="00:32:21.679" style="s2">which tool was being used, which is kind of</p>
+<p begin="00:32:18.480" end="00:32:24.240" style="s2">a good user experience.  Because your</p>
+<p begin="00:32:21.679" end="00:32:26.320" style="s2">users should know all the time whether</p>
+<p begin="00:32:24.240" end="00:32:28.159" style="s2">normal chatting is happening or tool usage</p>
+<p begin="00:32:26.320" end="00:32:30.720" style="s2">is happening.  And if the tool is being used</p>
+<p begin="00:32:28.159" end="00:32:32.960" style="s2">then which tool is being used.  Ok?  So</p>
+<p begin="00:32:30.720" end="00:32:36.159" style="s2">this is one last piece of integration we have to do.</p>
+<p begin="00:32:32.960" end="00:32:39.440" style="s2">Now honestly this is a lot of front end</p>
+<p begin="00:32:36.159" end="00:32:40.960" style="s2">related work.  And if you</p>
+<p begin="00:32:39.440" end="00:32:42.720" style="s2">go to the Streamlet website and their official</p>
+<p begin="00:32:40.960" end="00:32:45.200" style="s2">documentation, you will</p>
+<p begin="00:32:42.720" end="00:32:47.279" style="s2">see four chat elements in the chat elements.</p>
+<p begin="00:32:45.200" end="00:32:48.799" style="s2">Ok?  We have already used three of these.</p>
+<p begin="00:32:47.279" end="00:32:52.000" style="s2">This is the fourth one</p>
+<p begin="00:32:48.799" end="00:32:54.480" style="s2">status container.  And honestly its code is a bit</p>
+<p begin="00:32:52.000" end="00:32:56.159" style="s2">difficult.  Slightly tricky.  So</p>
+<p begin="00:32:54.480" end="00:32:58.880" style="s2">I am not going to explain you the entire code.</p>
+<p begin="00:32:56.159" end="00:33:01.600" style="s2">Instead what I have done is I have</p>
+<p begin="00:32:58.880" end="00:33:04.480" style="s2">created a completely new file for the front end</p>
+<p begin="00:33:01.600" end="00:33:08.159" style="s2">which is mostly the same.  Just in this</p>
+<p begin="00:33:04.480" end="00:33:11.200" style="s2">last part, here we have</p>
+<p begin="00:33:08.159" end="00:33:13.679" style="s2">used the status container due to which you will</p>
+<p begin="00:33:11.200" end="00:33:15.440" style="s2">get to see updates about which tool is being</p>
+<p begin="00:33:13.679" end="00:33:17.360" style="s2">used behind the scenes.  Ok?</p>
+<p begin="00:33:15.440" end="00:33:19.360" style="s2">So if you want, you can use it directly.</p>
+<p begin="00:33:17.360" end="00:33:21.200" style="s2">If you want, you can break down this code and</p>
+<p begin="00:33:19.360" end="00:33:23.440" style="s2">understand it with the help of</p>
+<p begin="00:33:21.200" end="00:33:25.039" style="s2">Chart GPT.  I do</p>
+<p begin="00:33:23.440" end="00:33:28.480" style="s2">n&#39;t want to unnecessarily lengthen the video at this point.  Ok</p>
+<p begin="00:33:25.039" end="00:33:30.799" style="s2">?  So if you run this updated file,</p>
+<p begin="00:33:28.480" end="00:33:36.159" style="s2">you will see output like this.</p>
+<p begin="00:33:30.799" end="00:33:39.840" style="s2">What is the top news in India,</p>
+<p begin="00:33:36.159" end="00:33:42.159" style="s2">look, search Dug Dug and here is your output.</p>
+<p begin="00:33:39.840" end="00:33:44.799" style="s2">So you can do this as per your convenience.</p>
+<p begin="00:33:42.159" end="00:33:47.279" style="s2">I will give you all the code in the description box.</p>
+<p begin="00:33:44.799" end="00:33:49.440" style="s2">You can go and experiment.</p>
+<p begin="00:33:47.279" end="00:33:51.919" style="s2">Ok?  So with that, whatever we had</p>
+<p begin="00:33:49.440" end="00:33:54.320" style="s2">planned, we achieved it in this video.  On</p>
+<p begin="00:33:51.919" end="00:33:55.840" style="s2">one hand we learned</p>
+<p begin="00:33:54.320" end="00:33:58.159" style="s2">what tools are?  How to use them</p>
+<p begin="00:33:55.840" end="00:34:00.080" style="s2">in Langraph.  Secondly,</p>
+<p begin="00:33:58.159" end="00:34:02.399" style="s2">we have added another feature to our existing project</p>
+<p begin="00:34:00.080" end="00:34:04.480" style="s2">which I think is a very powerful feature.</p>
+<p begin="00:34:02.399" end="00:34:07.279" style="s2">Now I would like to give you homework that</p>
+<p begin="00:34:04.480" end="00:34:08.879" style="s2">you try to add any tool of your choice</p>
+<p begin="00:34:07.279" end="00:34:11.359" style="s2">as per what you have just learned by watching this video.</p>
+<p begin="00:34:08.879" end="00:34:13.520" style="s2">And apart from this, if you</p>
+<p begin="00:34:11.359" end="00:34:15.359" style="s2">liked the video then please like it and</p>
+<p begin="00:34:13.520" end="00:34:17.599" style="s2">if you have not subscribed to this channel</p>
+<p begin="00:34:15.359" end="00:34:21.040" style="s2">then please subscribe.  See you</p>
+<p begin="00:34:17.599" end="00:34:21.040" style="s2">in the next video.  Bye.</p>
+</div>
+</body>
+</tt>
